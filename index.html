@@ -52,14 +52,14 @@
           center: {lat: 20.5937, lng: 78.9629},
           zoom: 2,
           disableDefaultUI: true,
-          draggable:false,
+          draggable:true,
           zoomControl: true,
         });
         //Set map style
         map.set('styles', prestoMap);
 
         //Replace the below placeholder with the path to the json file
-        $.getJSON("https://api.myjson.com/bins/27heg", function(json) {
+        $.getJSON("data/places.json", function(json) {
           for(each in json){
             cities = cities + 1;
             var myLatLng = {lat: parseFloat(json[each]["lat"]), lng: parseFloat(json[each]["lon"])};
